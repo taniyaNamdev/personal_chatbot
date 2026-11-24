@@ -47,10 +47,34 @@
     {
       "role": "assistant",
       "content": "No, I don't know you personally. I'm an AI designed to assist and communicate with users, and our conversation just started. I don't have any prior knowledge about you or your identity.\n\nI'm here to help answer your questions, provide information, and engage in conversation to the best of my abilities. How can I assist you today?"
+    },
+    {
+      "role": "user",
+      "content": "Hi do you know me?"
+    },
+    {
+      "role": "assistant",
+      "content": "No, I don't know you personally. I'm a large language model, I don't have the ability to know or remember individual users. Each time you interact with me, it's a new conversation and I don't retain any information about you from previous conversations.\n\nHowever, I'm happy to chat with you and get to know you a bit better through our conversation. What would you like to talk about?"
+    },
+    {
+      "role": "user",
+      "content": "My name is taniya"
+    },
+    {
+      "role": "assistant",
+      "content": "It's nice to meet you, Taniya! I'm glad you felt comfortable enough to share your name with me. Since we just started our conversation, I don't have any prior knowledge about you, but I'm happy to learn more about you through our chat.\n\nHow are you doing today, Taniya? Is there anything on your mind that you'd like to talk about or ask about? I'm all ears (or rather, all text)."
+    },
+    {
+      "role": "user",
+      "content": "What features I can add in my current project ."
+    },
+    {
+      "role": "assistant",
+      "content": "Exciting times for your project, Taniya!\n\nTo help you brainstorm, I'll need to know a bit more about your project. Could you please tell me:\n\n1. What is the main goal or purpose of your project?\n2. What type of project is it (e.g., web application, mobile app, game, software, etc.)?\n3. What features do you currently have in place?\n4. What kind of features are you looking to add (e.g., functionality, UI/UX improvements, integrations, etc.)?\n\nOnce I have a better understanding of your project, I can start suggesting some features you might consider adding.\n\n(If you're not sure about your project's features, feel free to share what you do have so far, and I can try to help you identify areas where you could improve or expand.)"
     }
   ],
   "summary": {
-    "covered": 5,
-    "text": "No summary available as this conversation has just started."
+    "covered": 11,
+    "text": "This conversation has just started. I don't have any information about you, and I'm not aware of any previous interactions or context. I'm a chatbot powered by the LLaMA 3.2 model, and I'm here to assist you with any questions or topics you'd like to discuss."
   }
 }
