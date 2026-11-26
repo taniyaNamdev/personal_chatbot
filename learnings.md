@@ -262,3 +262,24 @@ What I saw: each new summary got worse. The last one was written as if the bot w
   - *Limitation*: `build_context()` assumed the first message in history is the system message (`trimmed[:1]`). If that's ever not true, the summary lands in the wrong place, with no error.
   - *Fix*: build the context in a fixed order: system prompt from `config.py` → summary → recent messages. `trim_history()` is still reused for the recent messages.
   - *Lesson*: **one source of truth**. The rules live in one place (`config.py`), and the code no longer depends on the order of the saved history.
+- **v3 – goal**: join chat and RAG, so the chatbot remembers me *and* knows company facts.
+- **v3 – step 1**: new branch `chatbot-v3` (one branch per version).
+- **v3 – step 2**: new function `facts_message()` in `rag.py`.
+  - *Limitation*: `rag_ask()` does search + prompt + reply all by itself, so the chat can't reuse it.
+  - *Fix*: `facts_message()` does only **Retrieve + Augment**: it finds the best facts and returns them as a system message, ready to add to the chat. `rag_ask()` is unchanged.
+  - *Grounding rule*: "use them only if they help answer the question", because every chat message gets searched, even "Hi".
+  - *Result* ✅: "How many holidays do workers get?" → "20 paid leave days" came first. The 2nd fact (office hours) was only a weak match.
+  - *Lesson*: **`search()` always returns top_k results, even bad ones.** The model must be told it can ignore them.
+- **v3 – step 3**: chat + RAG together in `chat.py`.
+  - *Fix*: in `ask()`, `messages = build_context(history)`, then `messages.insert(-1, facts_message(user_msg))`.
+  - Order sent: system prompt → summary → recent messages → **company facts** → newest question.
+  - Facts go near the end, because models pay most attention to the end.
+  - **Facts are sent, NOT saved** in `history`. Memory = what we talked about (saved). Facts = looked up fresh each time.
+  - `build_context()` was not changed. Memory doesn't need to know about RAG. `chat.py` is the manager that combines them.
+  - *Result* ✅: leave days → 20, founder → Ravi Sharma, "Who am I?" → Taniya, "Hi" → no random facts.
+  - *Still open*:
+    - The summary grows every turn and saves non-facts (the bot's opinions, "the user asked about leaves").
+    - The summary keeps facts that are now outdated ("creating version v1").
+    - The summary writes the bot's suggestions as if I said them ("Taniya has been researching knowledge graphs").
+    - The model still reloads every request (`load_duration` ≈ 0.6 s).
+    - Long answers even though the system prompt says "Keep answers short".

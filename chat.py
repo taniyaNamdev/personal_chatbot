@@ -3,6 +3,7 @@ import json
 import requests
 from config import URL, CHAT_MODEL
 from memory import history, build_context, save_chat
+from rag import facts_message
 
 
 def ask():
@@ -11,9 +12,12 @@ def ask():
         if user_msg == "quit":
             break
         history.append({"role": "user", "content": user_msg})
+        messages = build_context(history)                    # NEW (v3): memory part (system + summary + recent)
+        messages.insert(-1, facts_message(user_msg))         # NEW (v3): company facts just before the newest question
         resp = requests.post(URL, json={
             "model": CHAT_MODEL,
-            "messages": build_context(history),
+            "messages": messages,
+
             "stream": False,
             "options": {"num_ctx": 2560},
         })

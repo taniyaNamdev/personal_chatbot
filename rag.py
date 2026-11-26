@@ -59,3 +59,9 @@ def rag_ask(question):
     print(f"   [context used:\n{context}]")                  # so you can see what was sent
     print("AI:", reply)
     return reply
+
+def facts_message(question, top_k=2):                        # NEW (v3): company facts as a system message
+    results = search(question, top_k)                        # find the best matching facts
+    facts = "\n".join(f"- {text}" for score, text in results)
+    return {"role": "system", "content":
+            "Company facts (use them only if they help answer the question):\n" + facts}

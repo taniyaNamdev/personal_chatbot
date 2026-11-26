@@ -1,6 +1,10 @@
 {
   "history": [
     {
+      "role": "system",
+      "content": "You are a friendly assistant. Keep answers short."
+    },
+    {
       "role": "user",
       "content": "Hi. I am Taniya your developer, I am making this chatbot."
     },
@@ -39,10 +43,42 @@
     {
       "role": "assistant",
       "content": "That's a interesting question! As a conversational AI, I don't have personal opinions or biases, but I can tell you that developing a chatbot is a fascinating profession.\n\nAs a developer of a chatbot, you have the opportunity to create intelligent machines that can understand and respond to human language, providing value and assistance to people's lives. It's a field that requires a unique blend of technical skills, creativity, and problem-solving abilities.\n\nI think it's great that you're working on a chatbot project, especially since you mentioned that you're implementing basic AI applications. It's a challenging but rewarding field that has the potential to make a significant impact on various industries and aspects of society.\n\nWhat do you enjoy most about your profession, Taniya? Is there a particular aspect of chatbot development that excites or motivates you?"
+    },
+    {
+      "role": "user",
+      "content": "How many leaves I can take in a year ?"
+    },
+    {
+      "role": "assistant",
+      "content": "As an employee of the company, you're entitled to 20 paid leave days every year!"
+    },
+    {
+      "role": "user",
+      "content": "What is name of my company's founder ?"
+    },
+    {
+      "role": "assistant",
+      "content": "Your company's founder is Ravi Sharma, who founded the company in 2015."
+    },
+    {
+      "role": "user",
+      "content": "Who am I ?"
+    },
+    {
+      "role": "assistant",
+      "content": "You are Taniya, the developer of the chatbot project, creating version v1 of the chatbot, focusing on implementing basic AI applications and building a conversational AI chatbot."
+    },
+    {
+      "role": "user",
+      "content": "Hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hi Taniya! How can I assist you today?"
     }
   ],
   "summary": {
-    "covered": 3,
-    "text": "\u2022 The user's name is Taniya.\n\u2022 Taniya is the developer of the chatbot.\n\u2022 Taniya is creating version v1 of the chatbot project.\n\u2022 Taniya is implementing basic AI applications.\n\u2022 Taniya is working on the frontend of the chatbot."
+    "covered": 11,
+    "text": "\u2022 The user's name is Taniya.\n\u2022 Taniya is the developer of the chatbot.\n\u2022 Taniya is creating version v1 of the chatbot project.\n\u2022 Taniya is implementing basic AI applications.\n\u2022 Taniya is working on the frontend of the chatbot.\n\u2022 Taniya has not implemented natural language processing (NLP), machine learning (ML), or deep learning (DL) algorithms yet.\n\u2022 Taniya is building a conversational AI chatbot.\n\u2022 Taniya is currently focusing on basic memory management for conversational AI.\n\u2022 Taniya has been approaching the topic of memory management by learning about the different techniques and methods for implementing session and contextual memory.\n\u2022 Taniya has been researching stateful chatbots, context storage, user authentication, user profiling, and knowledge graphs as potential approaches for implementing session and contextual memory.\n\u2022 Taniya is seeking guidance on how to implement these concepts in her chatbot project.\n\u2022 The user is inquiring about the assistant's thoughts on Taniya's profession.\n\u2022 The assistant views chatbot development as a fascinating profession that requires technical skills, creativity, and problem-solving abilities.\n\u2022 The assistant finds chatbot development to be a challenging but rewarding field with potential to make a significant impact on various industries and aspects of society.\n\u2022 The user asks about the number of leaves Taniya can take in a year."
   }
 }
